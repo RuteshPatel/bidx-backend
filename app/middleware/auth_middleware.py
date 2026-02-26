@@ -30,5 +30,6 @@ async def get_current_user(request: Request, db: Session = Depends(get_db)):
         "id": user.id,
         "phone": user.phone,
         "token": session.token,
+        "role": user.role.name
     }
     return user_response
